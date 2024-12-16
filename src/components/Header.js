@@ -6,7 +6,7 @@ import { YOUTUBE_SEARCH_API } from "../utils/constants";
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
-
+  const [showSuggestions, setShowSuggestions] = useState(false);
   useEffect(() => {
     const timer = setTimeout(() => {
       getSearchSuggestions();
@@ -57,20 +57,24 @@ const Header = () => {
             placeholder="Search"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
+            onFocus={() => setShowSuggestions(true)}
+            onBlur={() => setShowSuggestions(false)}
           />
           <button className="border border-gray-400 px-5 py-2 rounded-r-full bg-gray-200">
             🔍
           </button>
         </div>
-        <div className="fixed bg-white py-2 px-2 w-[30rem] shadow-lg rounded-lg border border-gray-100 ">
-          <ul>
-            {suggestions.map((s) => (
-              <li key={s} className="py-2 px-3 shadow-sm hover:bg-gray-100">
-                🔍 {s}
-              </li>
-            ))}
-          </ul>
-        </div>
+        {showSuggestions && (
+          <div className="fixed bg-white py-2 px-2 w-[30rem] shadow-lg rounded-lg border border-gray-100 ">
+            <ul>
+              {suggestions.map((s) => (
+                <li key={s} className="py-2 px-3 shadow-sm hover:bg-gray-100">
+                  🔍 {s}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
       <div className="col-span-1">
         <img
