@@ -32,4 +32,13 @@ Performance:
       - decline the api call
 
 
-http://suggestqueries.google.com/complete/search?client=chrome&ds=yt&q=Query 
+ --Live Chatting
+
+  -Challenges
+
+    - Get data live
+    - Updating the UI with live data
+
+    Handling data (Live)
+      - web sockets - 2 way connection between server and UI , send data from either side. Ex:stock market platforms , WhatsApp.
+      - Long Polling(API Polling) - one directions, checks after every specified interval. Ex:Gmail , Cricbuzz , API Polling.
