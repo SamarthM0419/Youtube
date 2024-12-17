@@ -42,3 +42,8 @@ Performance:
     Handling data (Live)
       - web sockets - 2 way connection between server and UI , send data from either side. Ex:stock market platforms , WhatsApp.
       - Long Polling(API Polling) - one directions, checks after every specified interval. Ex:Gmail , Cricbuzz , API Polling.
+
+
+ - Why live chart page not freezing ??
+ -> As soon as the message explodes, it will automatically delete the messages.
+ 
