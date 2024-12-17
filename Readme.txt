@@ -46,4 +46,8 @@ Performance:
 
  - Why live chart page not freezing ??
  -> As soon as the message explodes, it will automatically delete the messages.
+
+
+
+ -Building Infinite scroll => onScroll = make an api call
  
